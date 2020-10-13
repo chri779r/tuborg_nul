@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuborg Nul</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo"><img src="imgs/Tuborg-NUL-logo_Black-1.png" alt="tuborg nul logo"></a>
+                <ul class="nav-list">
+                    <li>
+                        <a href="index.html" class="nav-link">Hjem</a>
+                    </li>
+                    <li>
+                        <a href="tuborg.html" class="nav-link">Tuborg Nul</a>
+                    </li>
+                    <li>
+                        <a href="video.html" class="nav-link">Videoer</a>
+                    </li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <!------------------------------------SPLASH-------------------------------------->
+    <section id="popop">
+        <article>
+            <div id="luk">X</div>
+        </article>
+    </section>
+
+    <div id="wrap">
+        <a href="#popop">
+            <div id="v" class="i">
+                <span id="cta_v">Kampagnevideo</span>
+            </div>
+        </a>
+        <a href="tuborg.html">
+            <div id="h" class="i">
+                <span id="cta_h">Til siden</span>
+            </div>
+        </a>
+    </div>
+    <!----------------------------Content------------------------>
+
+    <section class="sectionwrapper">
+        <div class="col1">
+            <img src="" alt="">
+        </div>
+        <div class="col2">
+            <h2>Tuborg Nul</h2>
+            <h3>Nul alkohol</h3>
+            <h3>Nul problemer</h3>
+        </div>
+
+    </section>
+    <!----------------------------Footer------------------------>
+    <section class="footer">
+
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        const popop = document.querySelector("#popop");
+
+        document.querySelector("#v").addEventListener("click", () => popop.style.display = "block");
+
+        document.querySelector("#luk").addEventListener("click", () => popop.style.display = "none");
+    </script>
+</body></html>
