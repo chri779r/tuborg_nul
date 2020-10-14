@@ -212,6 +212,7 @@ header {
     height: 74vh;
     transition: .3s;
     background-size: 155%;
+    text-align: center;
 }
 
 #v {
@@ -237,10 +238,6 @@ header {
 }
 
 #cta_v {
-    display: inline-flex;
-    position: absolute;
-    top: 45%;
-    left: 39%;
     background-color: rgba(242, 242, 242, .8);
     border: 1px solid #fff;
     color: #253d80;
@@ -254,10 +251,6 @@ header {
 }
 
 #cta_h {
-    display: inline-flex;
-    position: absolute;
-    top: 45%;
-    right: 39%;
     background-color: rgba(242, 242, 242, .8);
     border: 1px solid #fff;
     color: #253d80;
