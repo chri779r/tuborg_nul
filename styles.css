@@ -11,6 +11,7 @@ font-family: 'Open Sans', sans-serif;
 #093A82
 #fac177
 #9c9e9f
+#bee0d9
 */
 
 * {
@@ -106,20 +107,20 @@ header {
 }
 
 .scrolling-active .nav a {
-    color: #093A82;
+    color: #f2f2f2;
 }
 
 .scrolling-active .burger {
-    background-color: #fff;
-    color: #093A82;
+    background-color: #093A82;
+    color: #f2f2f2;
 }
 
 .scrolling-active .burger div {
-    background-color: #093A82;
+    background-color: #f2f2f2;
 }
 
 .scrolling-active .nav-link::after {
-    background-color: #093A82;
+    background-color: #f2f2f2;
 }
 
 /*Apply styles after scroll end*/
@@ -204,7 +205,7 @@ header {
     }
 
     .scrolling-active .nav-active {
-        background-color: #f2f2f2;
+        background-color: #093A82;
         box-shadow: 0 3px 1rem rgba(0, 0, 0, .1);
 
     }
@@ -345,16 +346,136 @@ header {
 
 /*-------------------------Tuborg------------------------------*/
 
-.sectionwrapper {
+.foerste_section {
+    background: linear-gradient(90deg, rgba(249, 189, 121, 1) 75%, rgba(190, 224, 217, 1) 30%);
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 13vh;
+}
+
+.billede {
+    flex-basis: 100px;
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.billede img {
+    width: 80%;
+}
+
+.tekst {
+    flex-basis: 100px;
+    flex-grow: 1;
+    font-family: sans-serif;
+    color: white;
+    font-size: 22px;
+    margin: 20% 0 0 10px;
+}
+
+/*********************** anden_section **************************/
+
+
+.grid {
+    padding: 20px;
+    grid-gap: 20px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    height: 150vh;
+}
+
+.box1 {
+    background-color: #093A82;
+    flex-basis: 800px;
+    flex-grow: 1;
+    margin-top: 20px;
+}
+
+
+.box2 {
+    background-color: #F9BD79;
+    flex-basis: 800px;
+    flex-grow: 1;
+}
+
+.box3 {
+    background-color: #F2EEE6;
+    flex-basis: 800px;
+    flex-grow: 1;
+}
+
+#blaa_section {
+    height: 400px;
+    width: 100%;
+    background-color: rgba(190, 224, 217, 1);
+    position: sticky;
+}
+
+/************************MediaQ**************************/
+
+@media only screen and (min-width:600px) {
+
+    .foerste_section {
+        max-height: 400px;
+
+    }
+
+    .billede img {
+        width: 45%;
+        margin-left: 20%;
+    }
+
+    .tekst {
+        margin: 120px 0 0 40px;
+        font-size: 35px;
+    }
+
+
+    /*** GRID ***/
+
+    .grid {
+        padding-top: 130px;
+        grid-gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+
+        margin: auto;
+        height: 800px;
+        max-width: 900px;
+        z-index: 100;
+    }
+
+    .box1 {
+        grid-column: 1/2;
+        grid-row: 1/3;
+        z-index: 100;
+        margin-top: 0;
+    }
+
+    .box2 {
+        grid-column: 2/2;
+        grid-row: 1/2;
+        z-index: 101;
+    }
+
+    .box3 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        z-index: 102;
+    }
+
+}
+
+@media only screen and (min-width:870px) {
+    .tekst {
+        font-size: 60px;
+    }
 }
 
 /*-------------------------Beregner-----------------------------*/
 
+
 #beregner {
-    top: 13vh;
     display: flex;
     position: relative;
     text-align: center;
@@ -375,8 +496,7 @@ header {
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    bottom: 99px;
-}
+    bottom: 115px;
 }
 
 #amountOfBeers,
@@ -387,7 +507,7 @@ header {
 
 h3 {
     padding: 0;
-    margin: 3px;
+    margin: 5px;
 
 }
 
@@ -399,15 +519,15 @@ input {
     border-radius: 2rem;
     height: 30px;
     width: 105px;
+    margin-top: 10px;
     color: #093A82;
     font-family: 'Abril Fatface', cursive;
-
 }
 
 /*-----------------------Søjlediagram---------------------------*/
 #diagram {
-    top: 13vh;
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     text-align: center;
     justify-content: center;
@@ -415,6 +535,15 @@ input {
     font-family: 'Antic Didone', serif;
     letter-spacing: 1.5px;
     font-size: 16px;
+}
+
+#tegnknap {
+    border-radius: 2rem;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 105px;
+    color: #093A82;
+    font-family: 'Abril Fatface', cursive;
 }
 
 #barchart {
@@ -434,7 +563,7 @@ input {
 
 .bars {
     stroke-width: 20;
-    stroke: #253d80;
+    stroke: #093A82;
 }
 
 /*-----------------------kurve--------------------*/
@@ -461,21 +590,22 @@ input {
     transition: 2s;
 }
 
-</style >
 
 /*-----------------------Videosite------------------------------*/
 .video {
-    max-width: 1200px;
+    margin-top: 13vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.video h1 {
-    font-family: 'Abril Fatface', cursive;
-    font-size: 1.6rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 10px;
+#video_klip {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    flex-grow: 2;
 }
 
 /*-------------------------Footer------------------------------*/
