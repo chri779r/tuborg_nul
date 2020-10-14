@@ -35,35 +35,76 @@
 
         </div>
     </header>
-    <!---------------------------test------------------------->
-    <div id="beregner">
-        <img src="tuborg_crest.svg" alt="">
-        <div id="cal_con">
-            <div>
-                <h3>Antal øl </h3><input type="text" id="amountOfBeers">
-            </div>
-            <div>
-                <h3>Vægt i hele kg </h3>
-                <input type="text" id="weight">
-            </div>
-            <div>
-                <h3>Tid i timer </h3>
-                <input type="text" id="time">
-            </div>
-            <br>
-            <div>
-                <button id="cal_but" type="button" onclick="getInputValue();">Enter</button>
-            </div>
+    <!-------------------------beregner------------------------->
+    <section class="sectionwrapper">
+        <div id="beregner">
+            <img src="tuborg_crest.svg" alt="">
+            <div id="cal_con">
+                <div>
+                    <h3>Antal øl </h3><input type="text" id="amountOfBeers">
+                </div>
+                <div>
+                    <h3>Vægt i hele kg </h3>
+                    <input type="text" id="weight">
+                </div>
+                <div>
+                    <h3>Tid i timer </h3>
+                    <input type="text" id="time">
+                </div>
+                <br>
+                <div>
+                    <button id="cal_but" type="button" onclick="getInputValue();">Enter</button>
+                </div>
 
-            <strong>
-                <h3>Din promille er på:</h3>
-                <p id="result">0</p>
-            </strong>
+                <strong>
+                    <h3>Din promille er på:</h3>
+                    <p id="result">0</p>
+                </strong>
+            </div>
         </div>
-    </div>
+        <!-------------------------diagram------------------------->
+        <div id="diagram">
+            <svg id="barchart" viewbox="-20 -10 230 120">
+                <g id="chart">
 
+                    <text x="0" y="-3">Barchart</text>
+                    <text x="-15" y="5">5 mio</text>
+                    <text x="-18" y="52">2,5 mio</text>
+                    <text x="-11" y="100">0</text>
+
+                    <line x1="0" x2="0" y1="100" y2="0" />
+                    <line x1="190" x2="190" y1="0" y2="100" />
+
+                    <line x1="0" x2="190" y1="0" y2="0" />
+                    <line x1="0" x2="190" y1="20" y2="20" />
+                    <line x1="0" x2="190" y1="40" y2="40" />
+                    <line x1="0" x2="190" y1="60" y2="60" />
+                    <line x1="0" x2="190" y1="80" y2="80" />
+                    <line x1="0" x2="190" y1="100" y2="100" />
+                </g>
+
+                <g class="bars">
+                    <line x1="20" x2="20" y1="10" y2="100" />
+                    <line x1="50" x2="50" y1="20" y2="100" />
+                    <line x1="80" x2="80" y1="30" y2="100" />
+                    <line x1="110" x2="110" y1="40" y2="100" />
+                    <line x1="140" x2="140" y1="50" y2="100" />
+                    <line x1="170" x2="170" y1="60" y2="100" />
+                </g>
+                <polyline id="kurve" pathlength="1" points="" />
+
+
+            </svg>
+            <button id="tegnknap">Tegn</button>
+
+        </div>
+    </section>
+    <!-------------------------script------------------------->
 
     <script>
+        /*----------------------beregn------------------------*/
+
+
         function getInputValue() {
             // Selecting the input element and get its value
             let amountOfBeers = document.getElementById("amountOfBeers").value;
@@ -73,10 +114,36 @@
             let totalAlcoholConsumed = amountOfBeers * alcoholInGram;
             let formula = parseFloat(totalAlcoholConsumed / (weightInKg * 0.65) - (0.15 * timeInHours)).toFixed(2);
 
-
-
-
             document.getElementById("result").innerHTML = formula;
+        }
+
+
+
+
+        /*----------------------diagram------------------------*/
+
+
+        const values = [.938 * 20, 2.453 * 20, 2.8 * 20, 3.28 * 20, 4.32 * 20, 4.7 * 20];
+        const total = values.reduce((sum, value) => sum + value);
+        document.querySelectorAll(".bars line").forEach((bar, i) => {
+            bar.setAttribute("y1", 100 - values[i]);
+            bar.addEventListener("mouseover", e => vis(e));
+        });
+
+        const data = [.938 * 20, 2.453 * 20, 2.8 * 20, 3.28 * 20, 4.32 * 20, 4.7 * 20];
+        let punkter = "";
+
+        document.querySelector("#tegnknap").addEventListener("click", animer);
+
+        data.forEach((value, i) => {
+            punkter += i * 30 + "," + (100 - value) + " ";
+            console.log(punkter);
+        });
+
+        function animer() {
+            const kurve = document.querySelector("#kurve");
+            kurve.setAttribute("points", punkter);
+            kurve.style.strokeDashoffset = 0;
         }
     </script>
 
