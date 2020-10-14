@@ -238,6 +238,7 @@ header {
 }
 
 #cta_v {
+    display: inline-block;
     background-color: rgba(242, 242, 242, .8);
     border: 1px solid #fff;
     color: #253d80;
@@ -251,6 +252,7 @@ header {
 }
 
 #cta_h {
+    display: inline-block;
     background-color: rgba(242, 242, 242, .8);
     border: 1px solid #fff;
     color: #253d80;
@@ -265,7 +267,6 @@ header {
 
 @media screen and (max-width:1024px) {
     #wrap {
-        position: relative;
         display: flex;
         flex-wrap: wrap;
     }
