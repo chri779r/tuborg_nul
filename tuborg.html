@@ -35,13 +35,58 @@
 
         </div>
     </header>
-    <!------------------------------------SPLASH------------------------------->
+    <!---------------------------test------------------------->
+    <div id="map"></div>
 
 
 
+
+
+
+
+    <!---------------------------test------------------------->
+
+    <div id="beregner">
+        <div>
+            <h3>Antal øl </h3><input type="text" id="amountOfBeers">
+        </div>
+        <div>
+            <h3>Vægt i hele kg </h3>
+            <input type="text" id="weight">
+        </div>
+        <div>
+            <h3>Tid i timer </h3>
+            <input type="text" id="time">
+        </div>
+        <br>
+        <div>
+            <button id="cal_but" type="button" onclick="getInputValue();">Enter</button>
+        </div>
+
+        <strong>
+            <h3>Din promille er på:</h3>
+            <p id="result">0</p>
+        </strong>
+    </div>
+
+
+    <script>
+        function getInputValue() {
+            // Selecting the input element and get its value
+            let amountOfBeers = document.getElementById("amountOfBeers").value;
+            let weightInKg = document.getElementById("weight").value;
+            let timeInHours = document.getElementById("time").value;
+            let alcoholInGram = 12;
+            let totalAlcoholConsumed = amountOfBeers * alcoholInGram;
+            let formula = parseFloat(totalAlcoholConsumed / (weightInKg * 0.65) - (0.15 * timeInHours)).toFixed(2);
+
+
+
+
+            document.getElementById("result").innerHTML = formula;
+        }
+    </script>
 
     <script src="script.js"></script>
-
-
 
 </body></html>
