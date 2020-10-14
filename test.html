@@ -1,41 +1,44 @@
 <!DOCTYPE html>
-<html lang="da">
-
+<html lang="">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuborg Nul</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        #beregner {
+            display: inline-flex;
+            position: relative;
+            text-align: center;
+            color: #f2f2f2;
+        }
 
+        #beregner img {
+            width: 25rem;
+        }
+
+        #cal_con {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 8px;
+            left: 119.5px;
+        }
+
+        #amountOfBeers,
+        #time,
+        #weight {
+            border-radius: 2rem;
+        }
+        h3 {
+            padding: 0;
+            margin: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <nav class="nav">
-                <a href="index.html" class="logo"><img src="imgs/Tuborg-NUL-logo_Black-1.png" alt="tuborg nul logo"></a>
-                <ul class="nav-list">
-                    <li>
-                        <a href="index.html" class="nav-link">Hjem</a>
-                    </li>
-                    <li>
-                        <a href="tuborg.html" class="nav-link">Tuborg Nul</a>
-                    </li>
-                    <li>
-                        <a href="video.html" class="nav-link">Videoer</a>
-                    </li>
-                </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
 
-        </div>
-    </header>
-    <!---------------------------test------------------------->
     <div id="beregner">
         <img src="tuborg_crest.svg" alt="">
         <div id="cal_con">
@@ -73,13 +76,7 @@
             let totalAlcoholConsumed = amountOfBeers * alcoholInGram;
             let formula = parseFloat(totalAlcoholConsumed / (weightInKg * 0.65) - (0.15 * timeInHours)).toFixed(2);
 
-
-
-
             document.getElementById("result").innerHTML = formula;
         }
     </script>
-
-    <script src="script.js"></script>
-
 </body></html>
