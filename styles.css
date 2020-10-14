@@ -7,8 +7,6 @@
     box-sizing: border-box;
 }
 
-
-
 /*-------------------------------HEADER--------------------*/
 header {
     width: 100%;
@@ -47,8 +45,6 @@ header {
 .nav .logo img {
     height: 75px;
     width: 75px;
-    font-size: 3.5rem;
-    font-weight: bold;
     margin-left: 10px;
     margin-top: 10px;
 
@@ -274,19 +270,6 @@ header {
     font-family: 'Abril Fatface', cursive;
 }
 
-#cta_h::after {
-    content: '';
-    width: 100%;
-    height: 3px;
-    background-color: #253d80;
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .5s ease;
-}
-
 @media screen and (max-width:1024px) {
     #wrap {
         position: relative;
@@ -349,6 +332,21 @@ header {
 .sectionwrapper {
     display: flex;
     flex-wrap: wrap;
+}
+
+/*-------------------------Videosite------------------------------*/
+.video {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.video h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
 }
 
 /*-------------------------Footer------------------------------*/
