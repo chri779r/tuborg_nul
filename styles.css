@@ -1,5 +1,17 @@
 /*-------------------------------------GLOBAL---------------------------------------*/
 
+/*
+font-family: 'Abril Fatface', cursive;
+font-family: 'Antic Didone', serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+/*
+#f2f2f2
+#093A82
+#fac177
+#9c9e9f
+*/
 
 * {
     margin: 0;
@@ -339,6 +351,9 @@ header {
     position: relative;
     text-align: center;
     color: #f2f2f2;
+    font-family: 'Antic Didone', serif;
+    letter-spacing: 1.5px;
+    font-size: 16px;
 }
 
 #beregner img {
@@ -350,7 +365,7 @@ header {
     flex-direction: column;
     position: absolute;
     bottom: 76px;
-    left: 117.5px;
+    left: 108px;
 }
 
 #amountOfBeers,
@@ -361,11 +376,19 @@ header {
 
 h3 {
     padding: 0;
-    margin: 10px;
+    margin: 3px;
+
 }
 
 input {
     text-align: center;
+}
+
+#cal_but {
+    border-radius: 2rem;
+    height: 30px;
+    width: 105px;
+    color: #093A82;
 }
 
 /*-------------------------Videosite------------------------------*/
