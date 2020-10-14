@@ -2,8 +2,9 @@
             let header = document.querySelector('header');
             let windowPosition = window.scrollY > 0;
             header.classList.toggle('scrolling-active', windowPosition);
-        })
+            console.log("scroll");
 
+        })
         //---------------------------BURGER MENU---------------------//
 
         //Const er som var, bare uden at kunne ændre på parametrene. (block scope)
