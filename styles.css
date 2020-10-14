@@ -352,8 +352,6 @@ header {
 /*-------------------------Footer------------------------------*/
 
 .footer {
-    position: sticky;
-
     background-color: #fff;
     height: 13vh;
 }
